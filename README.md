@@ -85,3 +85,19 @@ Depuis le noeud master, vous pouvez lancer une *application Spark* depuis le dos
 Vous pouvez consulter l'interface de *l'application* depuis votre navigateur à l'adresse http://localhost:8160. Cette adresse, configurée dans le tunnel SSH, redirige vers le port 4040 du noeud **master**.
 
 Un invité de commande Spark vous propose d'executer du code Spark, vous pouvez par exemple copier-coller le contenu du fichier `estimate_pi.pyspark.py` et verifier depuis l'interface de l'application que votre code s'est bien executé.
+
+# Partie 5 - Environnement de notebook Zeppelin
+
+Sur le noeud **master**, téléchargez Zeppelin (http://apache.crihan.fr/dist/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2-bin-all.tgz) et décompressez le.
+
+Zeppelin expose normalement son interface sur le port 8080, mais ce port est déjà utilisé par Spark. Changez le port, mettez pas exemple le port `8082`, comme expliqué sur la documentation (https://zeppelin.apache.org/docs/latest/setup/operation/configuration.html#zeppelin-properties). Profitez-en également pour mettre le chemin vers votre dossier Spark dans la variable d'environnement SPARK_HOME en suivant la documentation (https://zeppelin.apache.org/docs/latest/interpreter/spark.html#1-export-spark_home, attention car le chemin du dossier dans la documentation n'est pas forcément le même que le votre !).
+
+Pensez à vous reconnecter en SSH en rajoutant un nouveau tunnel, par exemple `8082:localhost:8082`, puis démarrez le service Zeppelin en suivant la documentation (http://zeppelin.apache.org/docs/latest/quickstart/install.html#starting-apache-zeppelin).
+
+Connectez-vous à l'interface de Zeppelin depuis votre navigateur à l'adresse http://localhost:8082, puis configurez l'interpreteur Spark pour pointer vers l'adresse de votre **master** en suivant la documentation (https://zeppelin.apache.org/docs/latest/interpreter/spark.html#2-set-master-in-interpreter-menu).
+
+# Partie 6 - Développer en PySpark
+
+Sur l'instance **master**:
+  - Créez un dossier `data` dans votre repertoire home `~/`.
+  - Téléchargez et dezippez (commande `unzip`) les données dans ce repertoire. Les données sont disponibles à l'adresse https://rqueraud-inseec.s3-eu-west-1.amazonaws.com/nhl-game-data.zip.
