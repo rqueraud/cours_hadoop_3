@@ -98,6 +98,4 @@ Connectez-vous à l'interface de Zeppelin depuis votre navigateur à l'adresse h
 
 # Partie 6 - Développer en PySpark
 
-Sur l'instance **master**:
-  - Créez un dossier `data` dans votre repertoire home `~/`.
-  - Téléchargez et dezippez (commande `unzip`) les données dans ce repertoire. Les données sont disponibles à l'adresse https://rqueraud-inseec.s3-eu-west-1.amazonaws.com/nhl-game-data.zip.
+Importez le fichier `PySpark-Introduction.json` dans l'interface de Zeppelin puis faire les exercices pour apprendre à utiliser PySpark et sa notion de RDD.
